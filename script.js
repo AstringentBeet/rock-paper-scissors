@@ -50,9 +50,6 @@ let startOver = () =>{
 }
 //Scoreboard ends
 
-//
-
-
 //creates the RPS Standard
 const weapons = {
     rock: {weakTo: 'paper', strongTo: 'scissors'},
