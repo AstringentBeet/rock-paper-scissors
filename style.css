@@ -1,12 +1,14 @@
 body{
+    font-family: sans-serif;
     width: 100%;
+
 }
 
 .wrapper{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 80px 250px 150px;
+    grid-template-rows: 80px 300px 180px;
     justify-items: center;
 }
 
