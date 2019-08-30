@@ -26,7 +26,6 @@ let lose = (userSelection, computerChoice) => {
     notUserScore++;
     playGroup.computer.innerHTML = notUserScore;
     playGroup.player.innerHTML = userScore;
-    //playGroup.draw.innerHTML = tie;
     alert(`${computerChoice} beats ${userSelection}\nPlayer : ${userScore}\nComputer : ${notUserScore}\nOof...take this L, fam.`);
 }
 
@@ -82,7 +81,6 @@ let playRound = (playerSelection, computerSelection) => {
         lose(playerSelection, computerSelection);
     } else {
         alert("This is a draw!");
-        //middle();
     }
     let again = prompt("Play game again?");
     let answer = again.toLocaleLowerCase();
