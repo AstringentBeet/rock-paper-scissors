@@ -85,10 +85,10 @@ function playRound(){
         compareInput(userInput(), genComputerInput());
     }
     if(userScore > computerScore){
-        console.log(`Player : ${userScore}\nComputer : ${computerScore}\nLook at you earnin' that W. Way to go!`);
-        scoreBoard.result.innerHTML = "Look at you earnin' that W. Way to go!"
+        console.log(`Player : ${userScore}\nComputer : ${computerScore}\nSplendid win. Do keep it up!`);
+        scoreBoard.result.innerHTML = "Splendid win. Do keep it up!"
     } else {
-        console.log(`Player : ${userScore}\nComputer : ${computerScore}\nOof...take this L, fam.`);
-        scoreBoard.result.innerHTML = 'Oof...take this L, fam.';
+        console.log(`Player : ${userScore}\nComputer : ${computerScore}\nHmm...it appears you losed this round (sad face).`);
+        scoreBoard.result.innerHTML = 'Hmm...it appears you losed this round (sad face).';
     }
 }
