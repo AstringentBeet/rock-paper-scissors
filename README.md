@@ -12,6 +12,8 @@ Who knows where this'll end up. I initially wanted to make this into a fighting 
 but that may take time away from my other goals...again, we'll see.
 
 ## My Process
+
+### Outline
 The initial step is to, at the very least, change the God-awful text that I initially entered those years ago.
 Besides that, here is the overall outline of my plan:
 - removing the prompt/alert box in favor of actual buttons and a more dynamic GUI.
@@ -21,12 +23,19 @@ Besides that, here is the overall outline of my plan:
 - condesnsing the lines of code.
 - redesigning the layout by going over the faulty, apparently non-responsive grid-layout of the page.
 
+### Step 1: Reduce code and change input variation
+I find that the current code is quite verbose, especially with the excessive reliance on if-else statements,
+which is apparently not a favorite coniditional statement to overly use among developers.
+I'm going to implement an ingenius algorithm utilizing a two-dimensional array, directly based off of a program that [Lilian Lin wrote](https://medium.com/@linlinghao/write-a-rock-paper-scissors-game-without-if-else-in-javascript-f7e4951de220) for her own RPS project.
+
 ## Progress Log
 
 #### 03/28/2022
 CLoned the repository; the goal is to create a more GUI-freindly variation of the game.
 I may try to reduce the lines of code in this game as well. Goodbye, prompts, hello, buttons!
 
+## Built With
+HTML, CSS, Javascript
 
 ## What I learned
 Yeah...
