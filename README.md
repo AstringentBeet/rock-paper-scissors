@@ -38,4 +38,4 @@ I may try to reduce the lines of code in this game as well. Goodbye, prompts, he
 HTML, CSS, Javascript
 
 ## What I learned
-Yeah...
+A new way to apply two-dimensional arrays.
