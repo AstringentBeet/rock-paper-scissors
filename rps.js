@@ -2,6 +2,7 @@ let say = (word) => {console.log(word)};
 
 const rps = {
   choiceStack: ["rock", "paper", "scissors"],
+  // "c": computer; "u": user; "t": tie;
   rMap: [
     ["t", "u", "c"],
     ["c", "t", "u"],
@@ -22,10 +23,13 @@ function getResults (user, comp) {
 }
 
 let playRound = arrBtn.forEach(list => {
-  const computer = Math.floor(Math.random() * 3);
+  function computer() {
+    return Math.floor(Math.random() * 3);
+  }
   list.addEventListener('click', e => {
+    const cpuRes = computer();
     list.id === "clear" ? console.clear() 
-  : (say(`user chose: ${list.id} (${arrBtn.indexOf(list)}), computer chose ${rps.choiceStack[computer]}(${computer})`),
-     getResults(arrBtn.indexOf(list), computer));
+  : (say(`user chose: ${list.id} (${arrBtn.indexOf(list)}), computer chose ${rps.choiceStack[cpuRes]}(${cpuRes})`),
+     getResults(arrBtn.indexOf(list), cpuRes));
   })
 });

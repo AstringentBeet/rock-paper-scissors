@@ -23,10 +23,9 @@ Besides that, here is the overall outline of my plan:
 - condesnsing the lines of code.
 - redesigning the layout by going over the faulty, apparently non-responsive grid-layout of the page.
 
-### Step 1: Reduce code and change input variation
-I find that the current code is quite verbose, especially with the excessive reliance on if-else statements,
-which is apparently not a favorite coniditional statement to overly use among developers.
-I'm going to implement an ingenius algorithm utilizing a two-dimensional array, directly based off of a program that [Lilian Lin wrote](https://medium.com/@linlinghao/write-a-rock-paper-scissors-game-without-if-else-in-javascript-f7e4951de220) for her own RPS project.
+### Step 1: Reduce code and change input variation (edited 05/04/2022)
+I find that the current code is quite verbose, especially with the excessive reliance of conditional statements.
+I'm going to implement an ingenius (albeit partially cryptic) algorithm utilizing a two-dimensional array, very much inspired by a small program that [Lilian Lin wrote](https://medium.com/@linlinghao/write-a-rock-paper-scissors-game-without-if-else-in-javascript-f7e4951de220) for her own RPS project.
 
 ## Progress Log
 
@@ -58,10 +57,27 @@ I'm trying to have the object property ``rps.res`` referrence the argument passe
 After reaching out to a couple people, and a few groups online via chats and forums (to which only one person gave feedback), I decided to worry about the previous issue at a later date, but not dismiss the problem completely. adding ``getResults()`` inside ``userInput`` (name change coming later), and only using ``rps.res`` to increase points and claim the winner, seems to be the best choice of action. Now to start actually replacing the original ``script.js`` file with this new one.
 
 #### 05/03/2022
-I'm greatful to have recieved feedback from an online acquaintance. Reason being is the fact that they have made me realize just how cryptic my current code is. As I've learned, to work within a team of developers means to write code that's actually readable (which is why we even use languages that utilizes various layers of abstraction), even if it requires more lines of code. Although I do agree, I'm still convinced there is a way for me condense ``script.js`` to a certain degree without sacrificing some degree of practicality. Then again, this whole thing is an experiment.
+I'm greatful to have recieved feedback from an online acquaintance as they made me realize just how cryptic my current code is. As I've learned, to work within a team of developers means to write code that's actually readable (which is why we even use languages that utilizes various layers of abstraction), even if it requires more lines of code. Although I do agree, I'm still convinced there is a way for me condense ``script.js`` to a certain degree without sacrificing some degree of practicality. Then again, this whole thing is an experiment. It goes without saying that I'm quite stubborn at times, but no matter.
+
+As a side-note, I've learned how to properly call multi-dimensional arrays. As it turns out, calling an element from said array
+would be kind of like referring to a specific coordinate within the cartesian coordinate system, with the difference being (y, x), in contrast to the traditional (x,y) axis. For example, say we have an array titled ``fooBar``, whose contents are simply the array's name spelled out in two lines: 
+
+```javascript
+    let fooBar = [
+        ["f", "o", "o"],
+        ["b", "a", "r"]
+    ]
+```
+
+``fooBar[1][1]`` would select the second row of said array – ``["b", "a", "r"]`` –  then procceed to return the second element within it –  ``"a"``. So, swithing the parameters within ``getResults()`` was the key in calling the correct method for the game. 
+
+#### 05/04/2022
+I corrected a small bug in the code, specifically the computer generated input that is nested within the ``playRound`` function. A variable consisting of a randomized number will not create a new value when the user selects the same button again. To fix that, recreating the computer input as a function, followed by placing said function in a variable – ``cpuRes`` – nested inside the ``EventListener`` function has created consistant, accurate results.
 
 ## Built With
 HTML, CSS, Javascript.
 
 ## What I learned
-A new way to apply two-dimensional arrays.
+
+### Based off Step 1:
+A new way to apply two-dimensional arrays. Basics of DOM, including nodelist/array-like conversions. The difference between primitive and non-primitive data types. The importance of user-readabilty. 
