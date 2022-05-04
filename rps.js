@@ -9,7 +9,7 @@ const rps = {
   ],
   res: {
    get "t" () {say("draw")},
-   get "u" () {say(`user chose: you win`)},
+   get "u" () {say("you win")},
    get "c" () {say("you lose")},
   }
 };
@@ -17,16 +17,15 @@ const rps = {
 const button = document.getElementsByClassName("btn"),
       arrBtn = Array.from(button);
 
-let userInput = arrBtn.forEach(list => {
+function getResults (user, comp) {
+  say(rps.res[rps.rMap[comp][user]])
+}
+
+let playRound = arrBtn.forEach(list => {
+  const computer = Math.floor(Math.random() * 3);
   list.addEventListener('click', e => {
-    list.id === "clear" ? console.clear() : list.id
+    list.id === "clear" ? console.clear() 
+  : (say(`user chose: ${list.id} (${arrBtn.indexOf(list)}), computer chose ${rps.choiceStack[computer]}(${computer})`),
+     getResults(arrBtn.indexOf(list), computer));
   })
 });
-
-function cpu (){
-  return Math.floor(Math.random() * 3)
-}
-
-function getResults(user, comp) {
-  say(rps.res[rps.rMap[user][comp]]);
-}
