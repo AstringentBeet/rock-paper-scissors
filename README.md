@@ -30,36 +30,36 @@ I'm going to implement an ingenius (albeit partially cryptic) algorithm utilizin
 ## Progress Log
 
 #### 03/28/2022
-Cloned the repository; the goal is to create a more GUI-freindly variation of the game.
+&nbsp;&nbsp;&nbsp;&nbsp;Cloned the repository; the goal is to create a more GUI-freindly variation of the game.
 I may try to reduce the lines of code in this game as well. Goodbye, prompts, hello, buttons! 
 
 #### 04/06/2022 (based on written notes)
-Haven't done any edits to the style layout, but I have decided to call the HTML elements through
+&nbsp;&nbsp;&nbsp;&nbsp;Haven't done any edits to the style layout, but I have decided to call the HTML elements through
 class, rather than ID's to reduce the lines of code. Only issue is, although they are grouped within
 the same class, calling them as if they're arrays doesn't seem to work.
 
 #### 04/09/2022 (based on written notes)
-I've realized that utilizing ``document.getElementsByClassName("element")`` isn't an array, but an
+&nbsp;&nbsp;&nbsp;&nbsp;I've realized that utilizing ``document.getElementsByClassName("element")`` isn't an array, but an
 array-like object. Oh boy...
 
 #### 04/14/2022 (based on written notes)
-After falling into the rabbit-hole of Google, I've learned mroe about the differences between primitive and non-primitive data types, more details about the document object model API and how nodes/nodelists work (to a certain degree). Converting a nodelist, an array-like object, to an array is can be accomplished in a couple ways. either ``array.prototype.slice.call(element)`` / ``[].slice.call(element)`` or ``Array.from(element)``. I initially chose the former, but am going with the latter now. 
+&nbsp;&nbsp;&nbsp;&nbsp;After falling into the rabbit-hole of Google, I've learned mroe about the differences between primitive and non-primitive data types, more details about the document object model API and how nodes/nodelists work (to a certain degree). Converting a nodelist, an array-like object, to an array is can be accomplished in a couple ways. either ``array.prototype.slice.call(element)`` / ``[].slice.call(element)`` or ``Array.from(element)``. I initially chose the former, but am going with the latter now. 
 
-For my own referrence, [here is a link that describes the process of nodelist conversion](https://shifteleven.com/articles/2007/06/28/array-like-objects-in-javascript/).
+&nbsp;&nbsp;&nbsp;&nbsp;For my own referrence, [here is a link that describes the process of nodelist conversion](https://shifteleven.com/articles/2007/06/28/array-like-objects-in-javascript/).
 
 #### 04/23/2022 (based on written notes)
-Things are coming together, but I'm not liking the current algorithm that loops through the class button as it requires a bit too much lines of code.
+&nbsp;&nbsp;&nbsp;&nbsp;Things are coming together, but I'm not liking the current algorithm that loops through the class button as it requires a bit too much lines of code.
 
 #### 04/26/2022 (based on written notes)
-I'm trying to have the object property ``rps.res`` referrence the argument passed within the scope of ``getResults()``, but it's not working at all. 
+&nbsp;&nbsp;&nbsp;&nbsp;I'm trying to have the object property ``rps.res`` referrence the argument passed within the scope of ``getResults()``, but it's not working at all. 
 
 #### 05/02/2022
-After reaching out to a couple people, and a few groups online via chats and forums (to which only one person gave feedback), I decided to worry about the previous issue at a later date, but not dismiss the problem completely. adding ``getResults()`` inside ``userInput`` (name change coming later), and only using ``rps.res`` to increase points and claim the winner, seems to be the best choice of action. Now to start actually replacing the original ``script.js`` file with this new one.
+&nbsp;&nbsp;&nbsp;&nbsp;After reaching out to a couple people, and a few groups online via chats and forums (to which only one person gave feedback), I decided to worry about the previous issue at a later date, but not dismiss the problem completely. adding ``getResults()`` inside ``userInput`` (name change coming later), and only using ``rps.res`` to increase points and claim the winner, seems to be the best choice of action. Now to start actually replacing the original ``script.js`` file with this new one.
 
 #### 05/03/2022
-I'm greatful to have recieved feedback from an online acquaintance as they made me realize just how cryptic my current code is. As I've learned, to work within a team of developers means to write code that's actually readable (which is why we even use languages that utilizes various layers of abstraction), even if it requires more lines of code. Although I do agree, I'm still convinced there is a way for me condense ``script.js`` to a certain degree without sacrificing some degree of practicality. Then again, this whole thing is an experiment. It goes without saying that I'm quite stubborn at times, but no matter.
+&nbsp;&nbsp;&nbsp;&nbsp;I'm greatful to have recieved feedback from an online acquaintance as they made me realize just how cryptic my current code is. As I've learned, to work within a team of developers means to write code that's actually readable (which is why we even use languages that utilizes various layers of abstraction), even if it requires more lines of code. Although I do agree, I'm still convinced there is a way for me condense ``script.js`` to a certain degree without sacrificing some degree of practicality. Then again, this whole thing is an experiment. It goes without saying that I'm quite stubborn at times, but no matter.
 
-As a side-note, I've learned how to properly call multi-dimensional arrays. As it turns out, calling an element from said array
+&nbsp;&nbsp;&nbsp;&nbsp;As a side-note, I've learned how to properly call multi-dimensional arrays. As it turns out, calling an element from said array
 would be kind of like referring to a specific coordinate within the cartesian coordinate system, with the difference being (y, x), in contrast to the traditional (x,y) axis. For example, say we have an array titled ``fooBar``, whose contents are simply the array's name spelled out in two lines: 
 
 ```javascript
@@ -69,10 +69,12 @@ would be kind of like referring to a specific coordinate within the cartesian co
     ]
 ```
 
-``fooBar[1][1]`` would select the second row of said array – ``["b", "a", "r"]`` –  then procceed to return the second element within it –  ``"a"``. So, swithing the parameters within ``getResults()`` was the key in calling the correct method for the game. 
+&nbsp;&nbsp;&nbsp;&nbsp;``fooBar[1][1]`` would select the second row of said array – ``["b", "a", "r"]`` –  then procceed to return the second element within it –  ``"a"``. So, swithing the parameters within ``getResults()`` was the key in calling the correct method for the game. 
 
-#### 05/04/2022
-I corrected a small bug in the code, specifically the computer generated input that is nested within the ``playRound`` function. A variable consisting of a randomized number will not create a new value when the user selects the same button again. To fix that, recreating the computer input as a function, followed by placing said function in a variable – ``cpuRes`` – nested inside the ``EventListener`` function has created consistant, accurate results.
+#### 05/04/2022; 0310
+&nbsp;&nbsp;&nbsp;&nbsp;I corrected a small bug in the code, specifically the computer generated input that is nested within the ``playRound`` function. A variable consisting of a randomized number will not create a new value when the user selects the same button again. To fix that, recreating the computer input as a function, followed by placing said function in a variable – ``cpuRes`` – nested inside the ``EventListener`` function has created consistant, accurate results.
+#### 05/04/2022; 1417
+&nbsp;&nbsp;&nbsp;&nbsp;Phasing out of the experiment phase by letting go of ``console.log`` feeback and implementing actual ``innerHTML`` content just likethe previous file. As a result, more lines of code will be added.
 
 ## Built With
 HTML, CSS, Javascript.
