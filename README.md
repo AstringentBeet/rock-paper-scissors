@@ -6,7 +6,7 @@ among many newbies such as myself. Nonetheless, I consider it somewhat important
 to get into the habit of explaining each project as thoroughly as possible. 
 
 Since it has been quite a while since I have made an update, I might as well treat this
-like a brand new project. There'll be a few more changes down to this demo.
+like a brand new project. There'll be a few more changes done to this demo.
 
 Who knows where this'll end up. I initially wanted to make this into a fighting game,
 but that may take time away from my other goals...again, we'll see.
